@@ -37,23 +37,4 @@ public class Application {
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(Application.class, args);
 	}
-
-	@PostConstruct
-	public void runElasticSearch() throws Exception {
-		ImmutableSettings.Builder settings =
-				ImmutableSettings.settingsBuilder();
-		settings.put("node.name", "orange11-node");
-		settings.put("path.data", "./.strudel/data/index");
-		settings.put("http.enabled", false);
-		node = NodeBuilder.nodeBuilder()
-				.settings(settings)
-				.clusterName("strudel-cluster")
-				.data(true).local(true).node();
-	}
-
-	@PreDestroy
-	public void stopElasticSearch() throws Exception {
-		node.close();
-	}
-
 }

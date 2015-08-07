@@ -16,11 +16,18 @@
 
 package org.migor.strudel.service;
 
+import org.elasticsearch.common.inject.Inject;
+import org.migor.strudel.domain.Document;
+import org.migor.strudel.repositories.DocumentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class HelloWorldService {
+public class DocumentService {
+
+	@Autowired
+	private DocumentRepository documentRepository;
 
 	@Value("${name:World}")
 	private String name;
@@ -29,4 +36,7 @@ public class HelloWorldService {
 		return "Hello " + this.name;
 	}
 
+	public void index(Document entity) {
+		documentRepository.save(entity);
+	}
 }

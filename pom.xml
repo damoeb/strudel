@@ -10,13 +10,13 @@
     </parent>
     <artifactId>strudel</artifactId>
     <groupId>migor.org</groupId>
-    <name>Spring Boot Jetty Sample</name>
-    <description>Spring Boot Jetty Sample</description>
+    <name>strudel</name>
+    <description>strudel</description>
     <version>1.0-SNAPSHOT</version>
-    <url>http://projects.spring.io/spring-boot/</url>
+    <url>https://dev.migor.org/strudel/</url>
     <organization>
-        <name>Pivotal Software, Inc.</name>
-        <url>http://www.spring.io</url>
+        <name>migor</name>
+        <url>https://migor.org</url>
     </organization>
     <properties>
         <main.basedir>${basedir}/../..</main.basedir>
@@ -42,9 +42,18 @@
         <dependency>
             <groupId>org.elasticsearch</groupId>
             <artifactId>elasticsearch</artifactId>
-            <version>0.19.9</version>
+            <version>1.7.1</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-elasticsearch</artifactId>
+            <version>1.2.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.10</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

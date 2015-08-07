@@ -21,17 +21,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import org.migor.strudel.service.HelloWorldService;
+import org.migor.strudel.service.DocumentService;
 
 @Controller
 public class SampleController {
 
 	@Autowired
-	private HelloWorldService helloWorldService;
+	private DocumentService documentService;
 
 	@RequestMapping("/")
 	@ResponseBody
 	public String helloWorld() {
-		return this.helloWorldService.getHelloMessage();
+		return this.documentService.getHelloMessage();
 	}
 }
